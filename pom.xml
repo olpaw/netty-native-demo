@@ -16,7 +16,7 @@
     <dependency>
       <groupId>com.oracle.substratevm</groupId>
       <artifactId>svm</artifactId>
-      <version>GraalVM-1.0.0-rc1</version>
+      <version>${substratevm.version}</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
@@ -62,7 +62,7 @@
       <plugin>
           <groupId>com.oracle.substratevm</groupId>
           <artifactId>native-image-maven-plugin</artifactId>
-          <version>6328094f75e62265fdc59d245dd1a5122c66e11b-SNAPSHOT</version>
+          <version>${substratevm.version}</version>
           <executions>
               <execution>
                   <goals>
@@ -72,7 +72,7 @@
               </execution>
           </executions>
           <configuration>
-              <buildArgs>-H:ReflectionConfigurationResources=netty_reflection_config.json</buildArgs>
+              <buildArgs>-H:ReflectionConfigurationResources=netty_reflection_config.json -H:Name=netty-svm-http-server</buildArgs>
           </configuration>
       </plugin>
   </plugins>
